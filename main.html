@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+	<div>
+		<input type="text" id="result" readonly>
+	</div>
+	<div>
+		<button onclick="calculate('1')">1</button>
+		<button onclick="calculate('2')">2</button>
+		<button onclick="calculate('3')">3</button>
+		<button onclick="calculate('+')">+</button>
+	</div>
+	<div>
+		<button onclick="calculate('4')">4</button>
+		<button onclick="calculate('5')">5</button>
+		<button onclick="calculate('6')">6</button>
+		<button onclick="calculate('-')">-</button>
+	</div>
+	<div>
+		<button onclick="calculate('7')">7</button>
+		<button onclick="calculate('8')">8</button>
+		<button onclick="calculate('9')">9</button>
+		<button onclick="calculate('*')">*</button>
+	</div>
+	<div>
+		<button onclick="calculate('.')">.</button>
+		<button onclick="calculate('0')">0</button>
+		<button onclick="calculate('/')">/</button>
+		<button onclick="calculate('=')">=</button>
+	</div>
+	<div>
+		<button onclick="clearResult()">Clear</button>
+	</div>
+
+	<script>
+		function calculate(value) {
+			if (value === '=') {
+				// Calculate the result and display it
+				var result = eval(document.getElementById("result").value);
+				document.getElementById("result").value = result;
+			} else {
+				// Append the value to the input
+				document.getElementById("result").value += value;
+			}
+		}
+
+		function clearResult() {
+			document.getElementById("result").value = "";
+		}
+	</script>
+	<footer>
+		<p>Author: Mohammad Doustar<br>
+		<a href="mailto:hege@example.com">m.doustar@ icloud.com</a></p>
+	  </footer>
+</body>
+</html>
